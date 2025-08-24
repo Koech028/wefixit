@@ -1,0 +1,19 @@
+@echo off
+REM === Go to your backend project ===
+cd /d C:\Users\pc\wefixit\backend
+python -m uvicorn backend.main:app --reload --port 5000
+REM === Open CMD here ===
+start cmd /K "cd /d C:\Users\pc\wefixit\backend"
+
+REM === Open PowerShell here ===
+start powershell -NoExit -Command "Set-Location 'C:\Users\pc\wefixit\backend'"
+
+REM === Open in VS Code (requires VS Code installed + PATH enabled) ===
+start code C:\Users\pc\wefixit\backend
+
+REM === Start FastAPI server in a new CMD window ===
+start cmd /K "cd /d C:\Users\pc\wefixit\backend && uvicorn app.main:app --reload"
+
+echo.
+echo 🚀 All shortcuts launched: CMD, PowerShell, VS Code, and FastAPI server
+pause
